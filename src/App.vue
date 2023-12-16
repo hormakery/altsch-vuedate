@@ -35,17 +35,28 @@ const handleClick = () => {
 
 <template>
   <div>
-    <h2>Today</h2>
+    <h2 class="header">Today</h2>
     {{ getDay() }}, {{ getMonth() }} {{ getYear() }}.
     <br />
     <h2>{{ heading }}</h2>
     <p>Date: {{ dates }}</p>
     <br />
     <div class="input-container">
-      Add Day: <input name="day" type="number" @change="handleInputChange" />
+      Add Day:
+      <input
+        name="day"
+        type="number"
+        @change="handleInputChange"
+        class="input"
+      />
       <br />
       Add Month:
-      <input name="month" type="number" @change="handleInputChange" />
+      <input
+        name="month"
+        type="number"
+        @change="handleInputChange"
+        class="input"
+      />
       <br />
     </div>
     <button @click="handleClick" class="btn">Click to update</button>
@@ -53,6 +64,9 @@ const handleClick = () => {
 </template>
 
 <style scoped>
+.header {
+  color: #646cff;
+}
 .input-container {
   padding: 30px;
   border: 0.5px solid #000;
@@ -62,8 +76,15 @@ const handleClick = () => {
   font-weight: 500;
   margin-top: 20px;
   color: #f9f9f9;
-  padding: 8px 15px;
+  padding: 8px 25px;
   border-radius: 6px;
   background-color: #747bff;
+}
+
+.input {
+  margin-bottom: 20px;
+  padding: 8px 25px;
+  border-radius: 4px;
+  border: 0.5px solid #000;
 }
 </style>
